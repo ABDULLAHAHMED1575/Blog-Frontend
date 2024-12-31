@@ -1,5 +1,6 @@
 import { images } from '@/constants'
-import React from 'react'
+import {AiOutlineMenu, AiOutlineClose} from 'react-icons/ai'
+import React, { useState } from 'react'
 
 const NavItemsInfo = [
   {"name":"Home"},
@@ -19,13 +20,27 @@ const NavItem = ({name}) => {
 };
 
 export const Header = () => {
+  const [visible,setVisisble] = useState(false);
+  const navVisibilityHandle = () => {
+    setVisisble((currentState) => {
+      return !currentState;
+    })
+  }
   return (
     <div>
         <header className='container mt-2 mx-auto flex justify-between items-center py-4 '>
           <div className=''>
             <img src={images.Logo} alt="Logo" className='h-10 w-10'/>
           </div>
-          <div className='flex gap-9 items-center'>
+          <div className='z-50'>
+            {setVisisble ? ( 
+              <AiOutlineClose className="w-6 h-6" onClick={navVisibilityHandle}/> 
+            ):( 
+              < AiOutlineMenu className="w-6 h-6" onClick={navVisibilityHandle}/>
+            )}
+          </div>
+          <div className={`${setVisisble ? "right-0": "-right-full"} z-[49] flex flex-col lg:flex-row w-full lg:w-auto justify-center lg:justify-end fixed top-0 bottom-0 lg:static  lex gap-x-9 items-center`}>
+
             <ul className='flex gap-3'>
               {NavItemsInfo.map((items) => (
                 <NavItem key={items.name} name = {items.name}/>
