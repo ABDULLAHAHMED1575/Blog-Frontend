@@ -52,10 +52,10 @@ export const Header = () => {
     setVisisble((currentState) => !currentState)
   }
   return (
-    <div>
+    <section className='sticky top-0 left-0 right-0 z-50'>
         <header className='containers mx-auto flex justify-between items-center py-3 '>
           <div className=''>
-            <img src={images.Logo} alt="Logo" className='h-10 w-10'/>
+            <img src={images.Logo} alt="Logo" className='h-12 w-12'/>
           </div>
           <div className='lg:hidden z-50'>
             {visible ? ( 
@@ -74,6 +74,6 @@ export const Header = () => {
             <button className='text-white lg:text-black border-2 border-blue-500 rounded-full px-6 py-2 hover:bg-blue-500 hover:text-white transition-all duration-300'>Sign in</button>
           </div>
         </header>
-    </div>
+    </section>
   )
 }
