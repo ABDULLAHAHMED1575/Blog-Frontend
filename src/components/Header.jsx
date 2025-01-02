@@ -52,7 +52,7 @@ export const Header = () => {
     setVisisble((currentState) => !currentState)
   }
   return (
-    <section className='sticky top-0 left-0 right-0 z-50'>
+    <section className='sticky top-0 left-0 right-0 z-50 bg-white'>
         <header className='containers mx-auto flex justify-between items-center py-3 '>
           <div className=''>
             <img src={images.Logo} alt="Logo" className='h-12 w-12'/>
