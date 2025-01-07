@@ -55,7 +55,7 @@ export const Header = () => {
     <section className='sticky top-0 left-0 right-0 z-50 bg-white'>
         <header className='containers mx-auto flex justify-between items-center py-3 '>
           <div className=''>
-            <img src={images.Logo} alt="Logo" className='h-12 w-12'/>
+            <img src={images.Logo} alt="Logo" className='w-16 h-16 object-contain'/>
           </div>
           <div className='lg:hidden z-50'>
             {visible ? ( 
@@ -64,7 +64,7 @@ export const Header = () => {
               <AiOutlineMenu className="w-6 h-6" onClick={navVisibilityHandle}/>
             )}
           </div>
-          <div className={`${visible ? "right-0": "right-full"} mt-[56px] lg:mt-0 lg:text-black bg-dark-hard lg:bg-transparent z-[49] flex flex-col lg:flex-row w-full lg:w-auto justify-center lg:justify-end fixed top-0 bottom-0 lg:static gap-5 items-center transition-all duration-300`}>
+          <div className={`${visible ? "right-0": "right-full"} mt-[80px] lg:mt-0 lg:text-black bg-dark-hard lg:bg-transparent z-[49] flex flex-col lg:flex-row w-full lg:w-auto justify-center lg:justify-end fixed top-0 bottom-0 lg:static gap-5 items-center transition-all duration-300`}>
 
             <ul className='flex text-white items-center gap-y-5 lg:text-dark-soft flex-col lg:flex-row gap-3 font-semibold'>
               {NavItemsInfo.map((items) => (

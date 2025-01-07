@@ -1,4 +1,4 @@
-import Logo from "@/assets/Logo.webp"
+import Logo from "@/assets/Logo.PNG"
 import articles from "@/assets/articles.jpg"
 import post1 from "@/assets/Posts/Post1.jpg"
 import cta from "@/assets/Posts/CTA.JPG"
