@@ -1,10 +1,16 @@
-import { Homepage } from "@/pages/home/Homepage"
 import "./App.css"
+
+import { Route,Routes } from "react-router-dom"
+import { Homepage } from "@/pages/home/Homepage"
+import { ArticleDetail } from "./pages/articleDetail/ArticleDetail"
 
 function App() {
   return (
     <div className="App font-opensans">
-      <Homepage/>
+      <Routes>
+        <Route index path="/" element={<Homepage/>}/>
+        <Route index path="/blog/:id" element={<ArticleDetail/>}/>
+      </Routes>
     </div>
   )
 }
