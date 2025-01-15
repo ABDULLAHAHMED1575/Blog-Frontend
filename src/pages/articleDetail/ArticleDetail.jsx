@@ -1,9 +1,12 @@
 import { BreadCrumb } from '@/components/BreadCrumb'
 import { MainLayout } from '@/components/MainLayout'
 import { images } from '@/constants';
+import { SuggestedPost } from './container/SuggestedPost';
+import { CommentsContainer } from '@/components/comments/CommentsContainer';
+import { SocialShareButton } from '@/components/SocialShareButton';
+
 import React from 'react'
 import { Link } from 'react-router-dom';
-import { SuggestedPost } from './container/SuggestedPost';
 
 const BreadCrumbData = [
     {name: "Home",link:"/"},
@@ -73,8 +76,27 @@ export const ArticleDetail = () => {
                         Vel aliquam consequatur perspiciatis atque beatae quasi ad.
                     </p>
                 </div>
+                <CommentsContainer className="mt-10" logginedUserId='a'/>
             </article>
-            <SuggestedPost header="Latest Articles" posts={postData} tags={tagsData} className="mt-8 lg:mt-0 max-w-xs"/>
+            <div className='lg:flex lg:flex-col'>
+                <div className='flex items-center justify-center'>
+                    <SuggestedPost 
+                    header="Latest Articles" 
+                    posts={postData} tags={tagsData} 
+                    className="mt-8 lg:mt-0 md:max-w-lg max-w-sm"/>
+                </div> 
+                <div className='mt-7'>
+                    <h2 className='font-roboto font-medium text-dark-hard mb-4 md:text-xl md:mx-28 lg:mx-0'>Share On:</h2>
+                    <SocialShareButton url={
+                        encodeURI("https://www.google.com/")
+                    }
+                    title={
+                        encodeURIComponent("Google")
+                    }
+                    
+                    />
+                </div>
+            </div>
         </section>
     </MainLayout>
   )
