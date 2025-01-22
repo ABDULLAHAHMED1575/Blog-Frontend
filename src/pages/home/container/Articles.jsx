@@ -2,6 +2,7 @@ import { Card } from '@/components/Card'
 import { CTA } from '@/pages/home/container/CTA';
 import { images } from '@/constants'
 
+
 import { IoIosArrowForward } from "react-icons/io";
 import React from 'react'
 
@@ -18,7 +19,6 @@ export const Articles = () => {
                 <span>More articles</span>
                 <IoIosArrowForward className='w-3 h-3'/>
             </button>
-            
         </section>
         <div>
             <CTA/>
